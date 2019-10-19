@@ -1,4 +1,8 @@
 # Nomflix
 
 ## Screens
- - [ ] check
+
+- [ ] Home
+- [ ] TV Shows
+- [ ] Search
+- [ ] Detail
