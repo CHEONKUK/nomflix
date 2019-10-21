@@ -9,8 +9,10 @@
 
 ## API verbs
 
-- [ ] Now Playing
-- [ ] Upcoming (Movie)
-- [ ] Top Rated (TV, Movie)
-- [ ] Popuar (TV, Moive)
-- [ ] Airing Today (TV)
+- [x] Now Playing (~~Moive~~)
+- [x] Upcoming (~~Movie~~)
+- [x] Top Rated (~~TV~~)
+- [x] Popuar (~~TV~~, ~~Moive~~)
+- [x] Airing Today (~~TV~~)
+- [x] Detail (~~TV~~, ~~Movie~~)
+- [x] Search (~~TV~~, ~~Movie~~)
