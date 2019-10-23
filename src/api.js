@@ -9,7 +9,7 @@ const api = axios.create({
   }
 });
 
-export const moiveApi = {
+export const movieApi = {
   movieDetail: id =>
     api.get(`movie/${id}`, {
       params: {
