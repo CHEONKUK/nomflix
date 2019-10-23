@@ -18,6 +18,7 @@ export default class extends React.Component {
     try {
       // const nowPlaying = await movieApi.nowPlaying();
       // nowPlaying안에 data --> 객체비구조할당
+
       const {
         data: { results: nowPlaying }
       } = await movieApi.nowPlaying();
