@@ -25,14 +25,19 @@ export default class extends React.Component {
 
   searchTerm = async () => {
     const { searchTerm } = this.state;
+    this.setState({ loading: true });
 
     try {
-      const movieResult = await movieApi.search(searchTerm);
-      const tvResult = await tvApi.search(searchTerm);
+      const {
+        data: { results: movieResult }
+      } = await movieApi.search(searchTerm);
+      const {
+        data: { results: tvResult }
+      } = await tvApi.search(searchTerm);
 
       console.log(movieResult, tvResult);
 
-      this.setState({ loading: true });
+      this.setState({ movieResult, tvResult });
     } catch {
       this.setState({ error: "Can't find results." });
     } finally {
@@ -42,7 +47,7 @@ export default class extends React.Component {
 
   render() {
     const { movieResult, tvResult, searchTerm, error, loading } = this.state;
-
+    console.log(this.state);
     return (
       <SearchPresenter
         movieResult={movieResult}
