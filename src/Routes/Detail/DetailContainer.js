@@ -8,17 +8,25 @@ export default class extends React.Component {
     loading: true
   };
 
+  async componentDidMount() {
+    const {
+      match: {
+        params: { id }
+      },
+      history: { push },
+      location: { pathname }
+    } = this.props;
+
+    this.isMovie = pathname.includes("/movie/");
+    const parseId = parseInt(id);
+
+    if (isNaN(parseId)) {
+      return push("/");
+    }
+  }
+
   render() {
     const { result, error, loading } = this.state;
     return <DetailPresenter result={result} error={error} loadind={loading} />;
   }
 }
-
-/*
-  ?? result ??
-
-  Show를 검색 할 때 id를 갖고 감
-  작업이 끝나면 id를 가져와서 그걸로 검색하고 결과값Result를 보여줌
-  TV, Moive 둘다 같은 result, 같은 RouterDetail을 사용함
-
-*/

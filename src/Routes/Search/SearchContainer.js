@@ -7,14 +7,10 @@ export default class extends React.Component {
   state = {
     movieResult: null,
     tvResult: null,
-    searchTerm: "code",
+    searchTerm: "",
     error: null,
     loading: false
   };
-
-  componentDidMount() {
-    this.handleSubmit();
-  }
 
   handleSubmit = () => {
     const { searchTerm } = this.state;
@@ -35,8 +31,6 @@ export default class extends React.Component {
         data: { results: tvResult }
       } = await tvApi.search(searchTerm);
 
-      console.log(movieResult, tvResult);
-
       this.setState({ movieResult, tvResult });
     } catch {
       this.setState({ error: "Can't find results." });
@@ -47,7 +41,7 @@ export default class extends React.Component {
 
   render() {
     const { movieResult, tvResult, searchTerm, error, loading } = this.state;
-    console.log(this.state);
+
     return (
       <SearchPresenter
         movieResult={movieResult}
@@ -55,6 +49,7 @@ export default class extends React.Component {
         searchTerm={searchTerm}
         error={error}
         loading={loading}
+        handleSubmit={this.handleSubmit}
       />
     );
   }
