@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 import Section from "Components/Section";
 import Loader from "Components/Loader";
-import { movieApi } from "../../api";
 
 const Container = styled.div`
   padding: 0 10px;
